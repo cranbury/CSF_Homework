@@ -24,20 +24,21 @@ public class IntMaxHeap {
             //  E.g. If a child node is at index 10 in the array, 
             //  its parent node is at position (10-1)/2, which is 4 (integer division rounds down)
 
-            int new_index = array.size() - 1;
-            int parent_index = (new_index-1)/2;
 
-            while (array.get(new_index) > array.get(parent_index)) {
-                int temp = array.get(new_index);
-                array.set(new_index, array.get(parent_index));
-                array.set(parent_index, temp);
+            int index = array.size() - 1;
+            int parentIndex = (index - 1)/2;
+            int parentValue =  array.get(parentIndex).intValue();
 
-                new_index = parent_index;
-                parent_index = (new_index-1)/2;
+            while (value > parentValue) {
+                // Swap parent value and new value
+                array.set(index, new Integer(parentValue));
+                array.set(parentIndex, new Integer(value));
+
+                index = parentIndex;
+                parentIndex = (index - 1)/2;
+                parentValue =  array.get(parentIndex).intValue();
             }
 
-
-            //throw new UnsupportedOperationException("Not implemented!");
         }
     }
 
