@@ -28,7 +28,23 @@ public class SimpleHashMap {
         // * Insert the key/value tuple in the linked list at the desired index in the data store
         // * If something in that spot already exists, add it at the end of the linked list
         // * Return the value
-        return null;
+        int hash_index = Math.abs(key.hashCode()) % dataStore.length;
+
+        KeyValueList list = dataStore[hash_index];
+
+        if (dataStore[hash_index] == null) {
+            list = dataStore[hash_index];
+        }
+
+        LinkedList<KeyValueTuple> linkedList = list.values;
+        KeyValueTuple newKeyValueTuple = new KeyValueTuple();
+        newKeyValueTuple.key = key;
+        newKeyValueTuple.value = value;
+        linkedList.add(newKeyValueTuple);
+
+        return value;
+
+
     }
 
     public Object get(String key) {
@@ -36,6 +52,8 @@ public class SimpleHashMap {
         // * Get the hash value of the key
         // * Look for the desired key in the LinkedList at the appropriate index
         // * Return the value
+
+
         return null;
     }
 

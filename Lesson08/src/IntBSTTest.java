@@ -9,7 +9,7 @@ import static org.junit.Assert.assertTrue;
 public class IntBSTTest {
     @Test
     public void testInsertValue() throws Exception {
-        IntBST bst = new IntBST();
+        SampleIntBST bst = new SampleIntBST();
         assertEquals(bst.bfsRepresentation(), "");
 
         bst.insertValue(5);
@@ -34,7 +34,7 @@ public class IntBSTTest {
 
     @Test
     public void testSearch() throws Exception {
-        IntBST bst = new IntBST();
+        SampleIntBST bst = new SampleIntBST();
 
         int[] array = new int[10];
 

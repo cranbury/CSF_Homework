@@ -19,7 +19,7 @@ public class Lab4Samples {
     }
 
     public static void bst() {
-        IntBST bst = new IntBST();
+        SampleIntBST bst = new SampleIntBST();
 
         while(true) {
             Scanner consoleScanner = new Scanner(System.in);
@@ -29,7 +29,7 @@ public class Lab4Samples {
 
             if (command.equals("insert")) {
                 bst.insertValue(value);
-                bst.bfsRepresentation();
+                System.out.println(bst.bfsRepresentation());
             }
             else if (command.equals("find")) {
                 System.out.println("It is " + bst.search(value) + " that " + value + " exists in the BST.");
