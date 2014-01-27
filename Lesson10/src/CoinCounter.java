@@ -1,6 +1,8 @@
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 
 public class CoinCounter {
     public static int CHANGE_NOT_POSSIBLE_FLAG = Integer.MAX_VALUE;
@@ -88,7 +90,55 @@ public class CoinCounter {
             Second assignment: Make testWonderlandDenominations pass
             Third assignment: Make testTerribleDenominations pass
          */
+        ArrayList<Integer> denominations =  new ArrayList(Arrays.asList(1, 5, 7, 20));
+        ArrayList<HashMap> combos = new ArrayList<HashMap>();
 
-        throw new NotImplementedException();
+        int coins = 0;
+
+        for(int i= 1; i <= totalSum; i++) {
+            if (denominations.contains(i)) {
+                HashMap<Integer, Integer> hsh = new HashMap<Integer, Integer>();
+                hsh.put(i, 1);
+                combos.add(hsh);
+                coins = 1;
+            }
+            else {
+                int result = totalSum;
+
+
+                while(result > 0)  {
+
+                    int sub = 0;
+                    if (totalSum - 20 > 0) {
+                        sub = 20;
+                    }
+                    else if (totalSum - 7 > 0) {
+                        sub = 7;
+                    }
+                    else if (totalSum - 7 > 0) {
+                        sub = 5;
+                    }
+                    else if (totalSum - 7 > 0) {
+                        sub = 1;
+                    }
+
+                    result = result - sub;
+                    coins++;
+                }
+
+
+
+            }
+        }
+
+//        for(int i = 0; i < totalSum; i++) {
+//            if (combos.contains(i)) {
+//
+//            }
+//        }
+
+        return coins;
     }
+
+
 }
